@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
+  <title>Rest Countries API With Color Theme Switcher Master</title>
+</head>
+<body>
+
+  <header>
+    <div class="header container">
+      <h1>Where in the World?</h1>
+      <a href="#" class="dark-mode" data-mode>
+        <img src="assets/img/moon-regular.svg" alt="Dark Mode">
+        Dark Mode
+      </a>
+    </div>
+  </header>
+
+  <section data-section-countries>
+    <div class="section-contries container">
+      <div class="search-country">
+        <input type="text" placeholder="Search for a country...">
+        <select>
+          <option value="all">Filter by Region</option>
+          <option value="africa">Africa</option>
+          <option value="americas">Americas</option>
+          <option value="asia">Asia</option>
+          <option value="europe">Europe</option>
+          <option value="oceania">Oceania</option>
+        </select>
+      </div>
+
+      <div class="countries">
+        <ul class="countries-grid"><!--COUNTRYS--></ul>
+      </div>
+    </div>
+  </section>
+
+  <section data-section-info style="display: none;">
+    <div class="container section-info-country">
+      <div class="button-back">
+        <button>
+          <img src="./assets/img/arrow-left-solid-black.svg" alt="Seta para Esquerda" width="14px">
+          Back
+        </button>
+      </div>
+      <div class="info-country">
+        <div class="info-flag">
+          <img src="" alt="Bandeira do Pais">
+        </div>
+        <div class="info-caract">
+          <div class="caract-title">
+            <h2 data-name-country></h2>
+          </div>
+          <div class="caract-info">
+            <ul>
+              <li>Name Native: <span data-native-name></span></li>
+              <li>Population: <span data-population></span></li>
+              <li>Region: <span data-region></span></li>
+              <li>Sub Region: <span data-sub-region></span></li>
+              <li>Capital: <span data-capital2></span></li>
+            </ul>
+            <ul>
+              <li>Top Level Domain: <span data-top-level-domain></span></li>
+              <li>Currencies: <span data-currencies></span></li>
+              <li>Languages: <span data-languages></span></li>
+            </ul>
+          </div>
+          <div class="caract-tag">
+            <span>Border Countries: </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--TEMPLATE COUNTRY-->
+  <li style="display: none;" data-template-country>
+    <a href="#">
+      <div class="country">
+        <div class="flag">
+          <img src="" alt="" data-flag>
+        </div>
+        <div class="info">
+          <h3 data-name></h3>
+          <ul>
+            <li data-population></li>
+            <li data-region></li>
+            <li data-capital></li>
+          </ul>
+        </div>
+      </div>
+    </a>
+  </li>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
