@@ -1,6 +1,6 @@
 # Frontend Mentor - REST Countries API with color theme switcher
 
-Esta é uma solução para o desafio [REST Countries API with color theme switcher](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca/hub/rest-countries-api-with-color-theme-switcher-kxwHzNBDp) Os desafios do Frontend Mentor ajudam você a melhorar suas habilidades de codificação ao construir projetos realistas.
+Esta é uma solução para o desafio [REST Countries API with color theme switcher](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca) Os desafios do Frontend Mentor ajudam você a melhorar suas habilidades de codificação ao construir projetos realistas.
 
 ## Índice
 
@@ -31,8 +31,10 @@ Os usuários devem ser capazes de:
 ![](./screenshots/screenshot-dark-mode.png)
 ![](./screenshots/screenshot-country-light-mode.png)
 ![](./screenshots/screenshot-country-dark-mode.png)
-![](./screenshots/screenshot-mobile.png)
-![](./screenshots/screenshot-mobile-country.png)
+![](./screenshots/screenshot-mobile-1.png)
+![](./screenshots/screenshot-mobile-2.png)
+![](./screenshots/screenshot-mobile-3.png)
+![](./screenshots/screenshot-mobile-4.png)
 
 ### Links
 

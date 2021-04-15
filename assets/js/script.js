@@ -9,7 +9,8 @@ const el = (e) => document.querySelector(e),
   elCountries = el(".countries .countries-grid"),
   linkNameCountry = (country) =>
     `https://restcountries.eu/rest/v2/name/${country}?fullText=true`,
-  borderCountries = el(".section-info-country .caract-tag");
+  borderCountries = el(".section-info-country .caract-tag"),
+  events = ["click", "touchend"];
 
 let codeArrayCountry = {};
 
@@ -18,10 +19,12 @@ if (window.localStorage.getItem("mode") === "dark") {
   addOrRemoveIcon();
 }
 
-dataMode.addEventListener("click", (e) => {
-  e.preventDefault();
-  htmlEl.classList.toggle("dark");
-  addOrRemoveIcon();
+events.forEach((e) => {
+  dataMode.addEventListener(e, (ev) => {
+    ev.preventDefault();
+    htmlEl.classList.toggle("dark");
+    addOrRemoveIcon();
+  });
 });
 
 function addOrRemoveIcon() {
@@ -52,9 +55,11 @@ function fetchAPI(linkAPI) {
         elClone.querySelector("[data-name]").innerText =
           e.name.charAt(0).toUpperCase() + e.name.substr(1);
 
-        elClone.addEventListener("click", (e) => {
-          e.preventDefault();
-          selectedCountry(elClone.dataset.country);
+        events.forEach((e) => {
+          elClone.addEventListener(e, (ev) => {
+            ev.preventDefault();
+            selectedCountry(elClone.dataset.country);
+          });
         });
 
         elClone.querySelector(
@@ -147,23 +152,25 @@ function selectedCountry(name) {
   window.scrollTo(0, 0);
 }
 
-buttonBack.addEventListener("click", () => {
-  sectionCountries.style.display = "block";
-  sectionInfo.style.display = "none";
+events.forEach((e) => {
+  buttonBack.addEventListener(e, () => {
+    sectionCountries.style.display = "block";
+    sectionInfo.style.display = "none";
+  });
 });
 
 function addEventButton() {
   borderCountries.querySelectorAll("button").forEach((e) => {
-    e.addEventListener("click", (e) => {
-      selectedCountry(e.target.innerText);
+    events.forEach((ev) => {
+      e.addEventListener(ev, (e) => {
+        selectedCountry(e.target.innerText);
+      });
     });
   });
 }
 
 const optionSelect = el(".section-contries select");
 const inputSearch = el(".section-contries input[type='text']");
-
-console.log(inputSearch);
 
 optionSelect.addEventListener("change", regionFetchApi);
 inputSearch.addEventListener("keyup", paisFetchApi);
