@@ -1,13 +1,14 @@
 :root {
   /*dark mode*/
   --dark-blue: hsl(209, 23%, 22%);
+  --dark-blue-hover: hsl(222, 24%, 32%);
   --very-dark-blue-bg: hsl(207, 26%, 17%);
-
   /*light mode*/
   --very-dark-blue-tx: hsl(200, 15%, 8%);
   --dark-gray: hsl(0, 0%, 52%);
   --very-light-gray: hsl(0, 0%, 98%);
   --white: hsl(0, 0%, 100%);
+  --white-hover: hsl(0, 0%, 76%);
 }
 
 * {
@@ -86,6 +87,7 @@ html.dark .header .dark-mode {
 }
 .search-country select,
 .search-country input {
+  background: var(--white);
   font-family: "Nunito Sans", sans-serif;
   padding: 15px 20px;
   border-radius: 4px;
@@ -148,11 +150,20 @@ html.dark .countries a {
   border-radius: 4px;
   overflow: hidden;
   box-shadow: 0px 0.5px 6px hsl(0, 0%, 85%);
+  transition: 0.3s;
+}
+
+.countries .country:hover {
+  background: var(--white-hover);
 }
 
 html.dark .countries .country {
   background: var(--dark-blue);
   box-shadow: 0px 0.5px 6px hsl(207, 26%, 10%);
+}
+
+html.dark .countries .country:hover {
+  background: var(--dark-blue-hover);
 }
 
 .countries .flag {
@@ -202,12 +213,20 @@ html.dark .countries .country {
   outline: none;
   font-size: 1rem;
   box-shadow: 0px 2px 10px hsl(0, 0%, 70%);
+  transition: 0.3s;
+}
+.button-back button:hover {
+  background-color: var(--white-hover);
 }
 
 html.dark .button-back button {
-  background-color: hsl(209, 23%, 22%);
+  background-color: var(--dark-blue);
   color: #fff;
   box-shadow: 0px 0.5px 6px hsl(207, 26%, 10%);
+}
+
+html.dark .button-back button:hover {
+  background-color: var(--dark-blue-hover);
 }
 
 .button-back button img {
@@ -285,11 +304,18 @@ html.dark .button-back button {
   border: none;
   cursor: pointer;
 }
+.info-caract .caract-tag button:hover {
+  background: var(--white-hover);
+}
 
 html.dark .info-caract .caract-tag button {
-  background-color: hsl(209, 23%, 22%);
+  background-color: var(--dark-blue);
   box-shadow: 0px 0.5px 6px hsl(207, 26%, 10%);
   color: var(--white);
+}
+
+html.dark .info-caract .caract-tag button:hover {
+  background-color: var(--dark-blue-hover);
 }
 
 @media (max-width: 1300px) {
