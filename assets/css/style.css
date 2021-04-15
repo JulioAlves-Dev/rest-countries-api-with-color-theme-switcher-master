@@ -211,6 +211,7 @@ html.dark .button-back button {
 }
 
 .button-back button img {
+  width: 14px;
   margin-right: 10px;
 }
 

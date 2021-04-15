@@ -24,7 +24,9 @@
   <section data-section-countries>
     <div class="section-contries container">
       <div class="search-country">
-        <input type="text" placeholder="Search for a country...">
+        <input type="text"
+        placeholder="Search for a country..."
+        title="Search Country">
         <select>
           <option value="all">Filter by Region</option>
           <option value="africa">Africa</option>
@@ -36,7 +38,27 @@
       </div>
 
       <div class="countries">
-        <ul class="countries-grid"><!--COUNTRYS--></ul>
+        <ul class="countries-grid">
+          <!--COUNTRYS-->
+          <!--TEMPLATE COUNTRY-->
+          <li style="display: none;" data-template-country>
+            <a href="#">
+              <div class="country">
+                <div class="flag">
+                  <img src="" alt="" data-flag>
+                </div>
+                <div class="info">
+                  <h3 data-name>Name Country List</h3>
+                  <ul>
+                    <li data-population></li>
+                    <li data-region></li>
+                    <li data-capital></li>
+                  </ul>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </section>
@@ -45,17 +67,17 @@
     <div class="container section-info-country">
       <div class="button-back">
         <button>
-          <img src="./assets/img/arrow-left-solid-black.svg" alt="Seta para Esquerda" width="14px">
+          <img src="./assets/img/arrow-left-solid-black.svg" alt="Seta para Esquerda">
           Back
         </button>
       </div>
       <div class="info-country">
         <div class="info-flag">
-          <img src="" alt="Bandeira do Pais">
+          <img src="./assets/img/flag-default.png" alt="Bandeira do Pais">
         </div>
         <div class="info-caract">
           <div class="caract-title">
-            <h2 data-name-country></h2>
+            <h2 data-name-country>Name Country</h2>
           </div>
           <div class="caract-info">
             <ul>
@@ -78,24 +100,7 @@
       </div>
     </div>
   </section>
-  <!--TEMPLATE COUNTRY-->
-  <li style="display: none;" data-template-country>
-    <a href="#">
-      <div class="country">
-        <div class="flag">
-          <img src="" alt="" data-flag>
-        </div>
-        <div class="info">
-          <h3 data-name></h3>
-          <ul>
-            <li data-population></li>
-            <li data-region></li>
-            <li data-capital></li>
-          </ul>
-        </div>
-      </div>
-    </a>
-  </li>
+
 
   <script src="assets/js/script.js"></script>
 </body>
