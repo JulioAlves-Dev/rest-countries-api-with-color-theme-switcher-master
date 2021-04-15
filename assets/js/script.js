@@ -9,8 +9,7 @@ const el = (e) => document.querySelector(e),
   elCountries = el(".countries .countries-grid"),
   linkNameCountry = (country) =>
     `https://restcountries.eu/rest/v2/name/${country}?fullText=true`,
-  borderCountries = el(".section-info-country .caract-tag"),
-  events = ["click", "touchend"];
+  borderCountries = el(".section-info-country .caract-tag");
 
 let codeArrayCountry = {};
 
@@ -19,12 +18,10 @@ if (window.localStorage.getItem("mode") === "dark") {
   addOrRemoveIcon();
 }
 
-events.forEach((e) => {
-  dataMode.addEventListener(e, (ev) => {
-    ev.preventDefault();
-    htmlEl.classList.toggle("dark");
-    addOrRemoveIcon();
-  });
+dataMode.addEventListener("click", (ev) => {
+  ev.preventDefault();
+  htmlEl.classList.toggle("dark");
+  addOrRemoveIcon();
 });
 
 function addOrRemoveIcon() {
@@ -55,11 +52,9 @@ function fetchAPI(linkAPI) {
         elClone.querySelector("[data-name]").innerText =
           e.name.charAt(0).toUpperCase() + e.name.substr(1);
 
-        events.forEach((e) => {
-          elClone.addEventListener(e, (ev) => {
-            ev.preventDefault();
-            selectedCountry(elClone.dataset.country);
-          });
+        elClone.addEventListener("click", (ev) => {
+          ev.preventDefault();
+          selectedCountry(elClone.dataset.country);
         });
 
         elClone.querySelector(
@@ -152,19 +147,16 @@ function selectedCountry(name) {
   window.scrollTo(0, 0);
 }
 
-events.forEach((e) => {
-  buttonBack.addEventListener(e, () => {
-    sectionCountries.style.display = "block";
-    sectionInfo.style.display = "none";
-  });
+buttonBack.addEventListener("click", () => {
+  sectionCountries.style.display = "block";
+  sectionInfo.style.display = "none";
 });
 
 function addEventButton() {
   borderCountries.querySelectorAll("button").forEach((e) => {
-    events.forEach((ev) => {
-      e.addEventListener(ev, (e) => {
-        selectedCountry(e.target.innerText);
-      });
+    e.addEventListener("click", (ev) => {
+      ev.preventDefault();
+      selectedCountry(ev.target.innerText);
     });
   });
 }
