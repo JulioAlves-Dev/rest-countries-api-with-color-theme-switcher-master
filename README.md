@@ -47,6 +47,7 @@ Os usuários devem ser capazes de:
 - HTML5
 - CSS3
 - JavaScript
+- API
 
 ## Autor
 
