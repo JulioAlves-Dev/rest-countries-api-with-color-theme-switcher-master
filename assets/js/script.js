@@ -8,7 +8,7 @@ const el = (e) => document.querySelector(e),
   elCountry = el("[data-template-country]"),
   elCountries = el(".countries .countries-grid"),
   linkNameCountry = (country) =>
-    `https://restcountries.eu/rest/v2/name/${country}?fullText=true`,
+    `https://restcountries.com/v2/name/${country}?fullText=true`,
   borderCountries = el(".section-info-country .caract-tag");
 
 let codeArrayCountry = {};
@@ -77,7 +77,7 @@ function fetchAPI(linkAPI) {
     });
 }
 
-fetchAPI("https://restcountries.eu/rest/v2/all");
+fetchAPI("https://restcountries.com/v2/all");
 
 function selectedCountry(name) {
   fetch(linkNameCountry(name))
@@ -171,9 +171,9 @@ function regionFetchApi() {
   elCountries.innerHTML = "";
   inputSearch.value = "";
   if (this.value === "all") {
-    fetchAPI(`https://restcountries.eu/rest/v2/all`);
+    fetchAPI(`https://restcountries.com/v2/all`);
   } else {
-    fetchAPI(`https://restcountries.eu/rest/v2/region/${this.value}`);
+    fetchAPI(`https://restcountries.com/v2/region/${this.value}`);
   }
 }
 
@@ -182,9 +182,9 @@ function paisFetchApi(e) {
     elCountries.innerHTML = "";
     optionSelect.value = "all";
     if (this.value === "") {
-      fetchAPI(`https://restcountries.eu/rest/v2/all`);
+      fetchAPI(`https://restcountries.com/v2/all`);
     } else {
-      fetchAPI(`https://restcountries.eu/rest/v2/name/${this.value}`);
+      fetchAPI(`https://restcountries.com/v2/name/${this.value}`);
     }
   }
 }
